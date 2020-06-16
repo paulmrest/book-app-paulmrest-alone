@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Search Results</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div id="search-results">
+    <% searchResults.forEach(oneBook => { %>
+      <section class="book-section">
+        <h3>Title: <%= oneBook.title %></h3>
+        <h4>Subtitle: <%= oneBook.subtitle %></h4>
+        <ul>Author(s)</ul>
+        <% oneBook.authors.forEach(oneAuthor => { %>
+              <li><%= oneAuthor %></li>
+        <% }); %>
+        <p>Publication Date: <%= oneBook.pubDate %></p>
+        <p>Description: <%= oneBook.description %></p>
+        <p>Page Count: <%= oneBook.pageCount %></p>
+        <p>Average Rating: <%= oneBook.averageRating %></p>
+        <img src=<%= oneBook.imageLink %> alt=<%= oneBook.title %>>
+      </section>
+    <% }); %>
+  </div>
+
+</body>
+</html>
